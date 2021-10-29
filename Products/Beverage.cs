@@ -4,26 +4,23 @@ using System.Text;
 
 namespace Store
 {
-   public  class Food : Product
+    class Beverage : Product
     {
         public DateTime ExpirationDate { get; set; }
-        
-        public Food(string name, string brand, decimal price,
+        public Beverage(string name, string brand, decimal price,
             DateTime expirationDate) : base(name, brand, price)
         {
             ExpirationDate = expirationDate;
             this.DiscountPercent = SetDiscountInPercent();
-            //rounded to .00
-            this.Discount = Math.Round(Product.GetValueOfDiscount(Price, DiscountPercent),2);
-            // DiscountPercent = SetDiscountInPercent;
+            this.Discount = Math.Round(Product.GetValueOfDiscount(Price, DiscountPercent), 2);
 
         }
         /// <summary>
-        /// If perishable products are about to expire a discount is added - 10% if the expiration 
-        /// date is within 5 days of the purchase date and 50% if the product expires at the date of purchase.
+        /// If perishable products are about to expire a discount is added - 10% if the expiration date 
+        /// is within 5 days of the purchase date and 50% if the product expires at the date of purchase.
         /// </summary>
         /// <returns>discount percent</returns>
-        public override int SetDiscountInPercent() 
+        public override int SetDiscountInPercent()
         {
             DateTime dateOfPurchase = Cashier.dateOfPurchase;
             int discount = 0;
@@ -45,8 +42,10 @@ namespace Store
             {
                 this.Name.Remove(this.Name.Length - 1, 1);
             }
-            Console.WriteLine(this.Name.ToLower() + " - " + this.Brand);
+
+            Console.WriteLine(this.Name.ToLower() + "  " + this.Brand);
             Console.WriteLine();
+
         }
     }
 }

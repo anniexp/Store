@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Store
 {
-  public  class Appliance : Product
+    public class Appliance : Product
     {
         public Appliance(string name, string brand, decimal price,
             string model, DateTime productionDate, string weight) : base(name, brand, price)
@@ -12,7 +12,7 @@ namespace Store
             this.Model = model;
             this.ProductionDate = productionDate;
             this.Weight = weight;
-          //  this.Price = Math.Round(price, 2);
+            //  this.Price = Math.Round(price, 2);
             this.DiscountPercent = SetDiscountInPercent();
             this.Discount = Math.Round(Product.GetValueOfDiscount(Price, DiscountPercent), 2);
         }
@@ -22,20 +22,20 @@ namespace Store
         public string Weight { get; set; }
 
         /// <summary>
-        ///  5% discount on all appliances that cost above $999 and are purchased during the weekend
+        /// Overrides Product.SetDiscountInPercent(). There is a 5% discount on all appliances that cost above $999 and are purchased during the weekend
         /// </summary>
         /// <returns></returns>
         public override int SetDiscountInPercent()
         {
             DateTime dateOfPurchase = Cashier.dateOfPurchase;
             int discount = 0;
-            if ((dateOfPurchase.DayOfWeek is DayOfWeek.Saturday 
+            if ((dateOfPurchase.DayOfWeek is DayOfWeek.Saturday
                 || dateOfPurchase.DayOfWeek is DayOfWeek.Sunday) && this.Price > 999)
             {
                 discount = 5;
 
-            }             
-            
+            }
+
             this.DiscountPercent = discount;
             return discount;
         }

@@ -4,43 +4,36 @@ using System.Text;
 
 namespace Store
 {
-    //cannot be instanced, its children classes can
-   public class CartProduct 
+    public class CartProduct
     {
-
-
-      ///  public List<Product> ListOfProducts { get; set; }
         public decimal Quantity { get; set; }
-        public Product Product { get;  }
-
-
-
-        public CartProduct() 
+        public Product Product { get; }
+        //constructors
+        public CartProduct()
         {
         }
-
         public CartProduct(Product product, decimal quantity)
         {
             this.Product = product;
             this.Quantity = SetQuantity();
         }
 
-       /// <summary>
-       /// sets the number of each product ( )
-       /// </summary>
-       /// <returns></returns>
-        public static decimal SetQuantity() 
+        /// <summary>
+        /// sets the number of each product ( )
+        /// </summary>
+        /// <returns></returns>
+        public static decimal SetQuantity()
         {
 
             decimal quantity;
-            
+
             Random random = new Random();
             quantity = random.Next(1, 5);
 
 
             return quantity;
         }
-      //virtual mwthod can be overrided
+        //virtual mwthod can be overrided
         /*public virtual decimal SumPrice(List<Product> listOfProducts)
         {
             decimal sum = 0;
@@ -59,12 +52,12 @@ namespace Store
         /// <returns></returns>
         public static decimal SumP(CartProduct cart)
         {
-           decimal sum ;
+            decimal sum;
 
             sum = cart.Quantity * cart.Product.Price;
 
             return sum;
-        }      
+        }
         /*  private static void IterateThruDictionary()
 
           {

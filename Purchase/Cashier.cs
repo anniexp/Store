@@ -6,25 +6,29 @@ namespace Store
 {
     class Cashier
     {
-       public static DateTime dateOfPurchase = Program.dateOfPurchase;
+        public static DateTime dateOfPurchase = Program.dateOfPurchase;
         public Cashier()
         {
 
         }
-
+        /// <summary>
+        /// Method to print a receipt -  prints all purchased products with their price, quantity, the total sum and the total discount 
+        /// </summary>
+        /// <param name="listOfProducts"> cart (collection of cart products) </param>
+        /// <param name="dateOfPurchase">  the date and time of purchase</param>
         public static void PrintReceipt(List<CartProduct> listOfProducts, DateTime dateOfPurchase)
         {
 
-           // Console.WriteLine("Date: " + dateOfPurchase.ToString("yyyy-MM-dd ") + dateOfPurchase.Hour + ":" + dateOfPurchase.Minute + ":" +  dateOfPurchase.Second);
-            Console.WriteLine("Date: " + dateOfPurchase.ToString("yyyy-MM-dd HH:mm:ss ") );
+            // Console.WriteLine("Date: " + dateOfPurchase.ToString("yyyy-MM-dd ") + dateOfPurchase.Hour + ":" + dateOfPurchase.Minute + ":" +  dateOfPurchase.Second);
+            Console.WriteLine("Date: " + dateOfPurchase.ToString("yyyy-MM-dd HH:mm:ss "));
 
             Console.WriteLine();
 
             Console.WriteLine("---Products---");
             Console.WriteLine();
-           
 
-           
+
+
             foreach (CartProduct cart in listOfProducts)
             {
                 Console.WriteLine();
@@ -50,7 +54,11 @@ namespace Store
             Console.WriteLine();
             Console.WriteLine("TOTAL: $" + total);
 
-        }
+        }/// <summary>
+         /// Calculates the total sum of all products in the cart in $
+         /// </summary>
+         /// <param name="listOfProducts">cart</param>
+         /// <returns>sum of all products</returns>
         private static decimal SumSubtotal(List<CartProduct> listOfProducts)
         {
             decimal sumSubtotal = 0;
@@ -60,8 +68,11 @@ namespace Store
             }
             return sumSubtotal;
         }
-
-
+        /// <summary>
+        /// Calculates the total discount of the products in the cart, as it sums all the discounts of the products in the cart
+        /// </summary>
+        /// <param name="listOfProducts">cart</param>
+        /// <returns>the whole discount</returns>
         private static decimal SumDiscount(List<CartProduct> listOfProducts)
         {
             decimal sumDiscount = 0;

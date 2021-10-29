@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Store
 {
+    /// <summary>
+    /// there are only standard sizes available from XS to XL
+    /// </summary>
     public enum Size
     {
         XS,
@@ -15,21 +18,21 @@ namespace Store
 
     class Clothes : Product
     {
-        
+
         public string Colour { get; set; }
         public Size Size { get; set; }
-        public  string ClothesName { get; set; }
+        public string ClothesName { get; set; }
         public string ClothesBrand { get; set; }
         public decimal ClothesPrice { get; set; }
-      //  public int DiscountPercent; public decimal Discount; public string Color;
+        //  public int DiscountPercent; public decimal Discount; public string Color;
         //public DateTime ExpirationDate { get; set; }
-       /*  public Clothes(string name, string brand, decimal price, Size size, int discountPercent , decimal discount, string color) : base(name, brand, price,discountPercent , discount)
-           {
-               Colour = color;
-            this.Size = size;
-            this.DiscountPercent = SetDiscountInPercent();
-            this.Discount = Math.Round(Product.GetValueOfDiscount(Price, DiscountPercent), 2);
-           }*/
+        /*  public Clothes(string name, string brand, decimal price, Size size, int discountPercent , decimal discount, string color) : base(name, brand, price,discountPercent , discount)
+            {
+                Colour = color;
+             this.Size = size;
+             this.DiscountPercent = SetDiscountInPercent();
+             this.Discount = Math.Round(Product.GetValueOfDiscount(Price, DiscountPercent), 2);
+            }*/
 
         public Clothes(string name, string brand, decimal price, Size Size, string color) : base(name, brand, price)
         {
@@ -37,8 +40,6 @@ namespace Store
             this.Size = Size;
             this.DiscountPercent = SetDiscountInPercent();
             this.Discount = Math.Round(Product.GetValueOfDiscount(Price, DiscountPercent), 2);
-
-
         }
         /// <summary>
         /// default constructor
@@ -48,12 +49,15 @@ namespace Store
             Size = Size.S;
             ClothesName = "";
             ClothesPrice = 0;
-           ClothesBrand = "";
+            ClothesBrand = "";
             DiscountPercent = 0;
             Discount = 0;
         }
 
-
+        /// <summary>
+        /// Overrides Product.SetDiscountInPercent(). There is a 10% discount on all clothes bought during the working days
+        /// </summary>
+        /// <returns>discount percent</returns>
         public override int SetDiscountInPercent()
         {
             DateTime dateOfPurchase = Cashier.dateOfPurchase;
@@ -68,11 +72,13 @@ namespace Store
                 discount = 10;
 
             }
-                                   
+
             this.DiscountPercent = discount;
             return discount;
         }
-
+        /// <summary>
+        /// Overrides abstract method Product.PrintProduct()
+        /// </summary>
         public override void PrintProduct()
         {
             Console.WriteLine(this.Name + " " + this.Brand + " " + this.Size + " " + this.Colour.ToLower());

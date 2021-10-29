@@ -6,34 +6,36 @@ namespace Store
 {
     public abstract class Product
     {
-
+        //properties
         public string Name { get; set; }
         public string Brand { get; set; }
         public decimal Price { get; set; }
         public int DiscountPercent { get; set; }
         public decimal Discount { get; set; }
 
-       /* protected Product(string name, string brand, decimal price, int discountPercent, decimal discount)
+        //constructors
+        /* protected Product(string name, string brand, decimal price, int discountPercent, decimal discount)
 
-        {
-            this.Name = name;
-            this.Brand = brand;
-            this.Price = Math.Round(price, 2);
-            this.DiscountPercent = discountPercent;
-            this.Discount = Math.Round(discount, 2);
-            //this.Discount = GetValueOfDiscount(price, discountPercent);
-        }
-       */
+         {
+             this.Name = name;
+             this.Brand = brand;
+             this.Price = Math.Round(price, 2);
+             this.DiscountPercent = discountPercent;
+             this.Discount = Math.Round(discount, 2);
+             //this.Discount = GetValueOfDiscount(price, discountPercent);
+         }
+        */
         protected Product(string name, string brand, decimal price)
 
         {
             this.Name = name;
             this.Brand = brand;
-            this.Price = Math.Round(price,2);
+            this.Price = Math.Round(price, 2);
 
             //this.Discount = GetValueOfDiscount(price, discountPercent);
         }
-        public Product() {
+        public Product()
+        {
 
             Name = "";
             Price = 0;
@@ -41,25 +43,14 @@ namespace Store
             DiscountPercent = 0;
             Discount = 0;
         }
-    
-
-
-
-        // Implementation of IEquatable<T> interface
-      /*  public bool Equals(Product product)
-        {
-            return (this.Name, this.Brand, this.Price, this.Discount) ==
-                (product.Name, product.Brand, product.Price, product.Discount);
-        }*/
-
 
         /// <summary>
-        /// 
+        /// abstract method for calculating discount percent - must be overrided in each child class
         /// </summary>
         /// <returns>discount in percent</returns>
         public abstract int SetDiscountInPercent();
         /// <summary>
-        /// 
+        /// Gets the value of the discount. Equals original price * discount in percents / 100
         /// </summary>
         /// <param name="price">original price </param>
         /// <param name="discount">discount in percent</param>
@@ -74,12 +65,6 @@ namespace Store
         }
 
         public abstract void PrintProduct();
-        
-        
-
-        //must be overide
-        // public abstract int SetDiscount();
-
 
     }
 }
