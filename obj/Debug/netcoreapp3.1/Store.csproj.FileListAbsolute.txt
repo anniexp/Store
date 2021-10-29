@@ -1,0 +1,14 @@
+C:\Users\Lenovo\source\repos\Store\Store\bin\Debug\netcoreapp3.1\Store.exe
+C:\Users\Lenovo\source\repos\Store\Store\bin\Debug\netcoreapp3.1\Store.deps.json
+C:\Users\Lenovo\source\repos\Store\Store\bin\Debug\netcoreapp3.1\Store.runtimeconfig.json
+C:\Users\Lenovo\source\repos\Store\Store\bin\Debug\netcoreapp3.1\Store.runtimeconfig.dev.json
+C:\Users\Lenovo\source\repos\Store\Store\bin\Debug\netcoreapp3.1\Store.dll
+C:\Users\Lenovo\source\repos\Store\Store\bin\Debug\netcoreapp3.1\Store.pdb
+C:\Users\Lenovo\source\repos\Store\Store\obj\Debug\netcoreapp3.1\Store.csproj.AssemblyReference.cache
+C:\Users\Lenovo\source\repos\Store\Store\obj\Debug\netcoreapp3.1\Store.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\source\repos\Store\Store\obj\Debug\netcoreapp3.1\Store.AssemblyInfoInputs.cache
+C:\Users\Lenovo\source\repos\Store\Store\obj\Debug\netcoreapp3.1\Store.AssemblyInfo.cs
+C:\Users\Lenovo\source\repos\Store\Store\obj\Debug\netcoreapp3.1\Store.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\source\repos\Store\Store\obj\Debug\netcoreapp3.1\Store.dll
+C:\Users\Lenovo\source\repos\Store\Store\obj\Debug\netcoreapp3.1\Store.pdb
+C:\Users\Lenovo\source\repos\Store\Store\obj\Debug\netcoreapp3.1\Store.genruntimeconfig.cache
