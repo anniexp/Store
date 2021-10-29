@@ -10,8 +10,8 @@ namespace Store
 
         static void Main(string[] args)
         {
-            // dateOfPurchase = DateTime.Now.Date;
-            dateOfPurchase = DateTime.Now.AddDays(2);
+             dateOfPurchase = DateTime.Now.Date;
+            //dateOfPurchase = DateTime.Now.AddDays(2);
 
 
             Clothes clothes1 = new Clothes("T-shirt", "Chanel", 1111.00M, Size.L, "red");
@@ -19,7 +19,7 @@ namespace Store
             Clothes clothes3 = new Clothes("dress", "Versache", 2211.11M, Size.S, "black");
             //Beverage bev1 = new Beverage("");
 
-            Food food1 = new Food("Breads", "Zemel", 1.25M, new DateTime(2021, 10, 29));
+            Food food1 = new Food("Breads", "Zemel", 1.25M, new DateTime(2021, 10, 30));
             Food food2 = new Food("Sour milk", "Elena", 1.05M, new DateTime(2021, 11, 28));
 
             Beverage beverage1 = new Beverage("water", "Devin", 1.50M, new DateTime(2022, 02, 24));

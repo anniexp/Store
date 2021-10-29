@@ -38,7 +38,7 @@ namespace Store
                 Console.WriteLine();
                 if (cart.Product.Discount != 0)
                 {
-                    Console.WriteLine("#discount {0}%  -${1}", cart.Product.DiscountPercent, cart.Product.Discount);
+                    Console.WriteLine("#discount {0}% -${1}", cart.Product.DiscountPercent, cart.Product.Discount);
                     Console.WriteLine();
 
                 }

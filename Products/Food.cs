@@ -35,7 +35,7 @@ namespace Store
         {
             DateTime dateOfPurchase = Cashier.dateOfPurchase;
             int discount = 0;
-            if (dateOfPurchase >= this.ExpirationDate.Date.AddDays(-5))
+            if (dateOfPurchase >= this.ExpirationDate.Date.AddDays(-5) && dateOfPurchase <= this.ExpirationDate.Date)
             {
                 discount = 10;
                 if (dateOfPurchase == this.ExpirationDate.Date)
